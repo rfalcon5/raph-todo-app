@@ -32,14 +32,14 @@ while True:
         # file.writelines(todos)
         # file.close()
 
-        write_todos(todos, "Files/todos.txt")
+        write_todos(todos, "todos.txt")
 
     elif user_action.startswith('show'):
         # file = open('Files/todos.txt', 'r')
         # todos = file.readlines()
         # file.close()
 
-        todos = get_todos('Files/todos.txt')
+        todos = get_todos('todos.txt')
 
         new_todos =[]
 
@@ -60,7 +60,7 @@ while True:
             print(number)
             number = number - 1
 
-            todos = get_todos('Files/todos.txt')
+            todos = get_todos('todos.txt')
             new_todo = input("Enter new todo: ")
             todos[number] = new_todo + '\n'
 
@@ -74,7 +74,7 @@ while True:
         try:
             number = int(user_action[9:])
 
-            todos = get_todos('Files/todos.txt')
+            todos = get_todos('todos.txt')
             index = number - 1
             todo_to_remove = todos[index].strip('\n')
             todos.pop(index)
