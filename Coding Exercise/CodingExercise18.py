@@ -24,15 +24,17 @@ window = sg.Window("Conversion to Meters", layout=[[feet_label, feet_input],
 
 while True:
     event, values = window.read()
-    feet = float(values["feet"])
-    inches = float(values["inches"])
-
-    result = convert(feet, inches)
-    window["output"].update(value=f"{result} m", text_color="white")
     match event:
         case "Exit":
             break
         case sg.WIN_CLOSED:
             break
+
+    feet = float(values["feet"])
+    inches = float(values["inches"])
+
+    result = convert(feet, inches)
+    window["output"].update(value=f"{result} m", text_color="white")
+
 
 window.close()
